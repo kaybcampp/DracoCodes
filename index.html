@@ -113,11 +113,13 @@
             const chatBody = document.getElementById("chat-body");
             const chatInput = document.getElementById("chat-input");
 
-            const ngrokUrl = "https://26ef-151-197-215-174.ngrok-free.app"; // Replace with your ngrok URL
+            const ngrokUrl = "https://fef9-151-197-215-174.ngrok-free.app"; // Replace with your ngrok URL
+
+            let chatHistory = [];
 
             const sendWelcomeMessage = () => {
-                const welcomeMessage = 
-                    "Welcome to DracoCodes! I'm here to help you understand your needs for a custom coding service. I'll assist in providing a rough estimate and timeframe for your project. Please start by explaining what kind of project you hope to achieve with our services!";
+                const welcomeMessage =
+                    "Welcome to DracoCodes! I’m here to help you with your custom project inquiries. Could you start by sharing what type of project you’d like us to build (e.g., website, bot, or application)?";
                 addMessageToChat("DracoCodes AI", welcomeMessage);
             };
 
@@ -126,9 +128,9 @@
                     const response = await fetch(`${ngrokUrl}/chat`, {
                         method: "POST",
                         headers: {
-                            "Content-Type": "application/json"
+                            "Content-Type": "application/json",
                         },
-                        body: JSON.stringify({ message: userMessage })
+                        body: JSON.stringify({ message: userMessage, chatHistory }),
                     });
 
                     const data = await response.json();
@@ -141,13 +143,16 @@
 
             const sendMessage = async () => {
                 const userMessage = chatInput.value.trim();
-                if (userMessage) {
-                    addMessageToChat("You", userMessage);
-                    chatInput.value = "";
+                if (!userMessage) return;
 
-                    const botResponse = await fetchBotResponse(userMessage);
-                    addMessageToChat("DracoCodes AI", botResponse);
-                }
+                addMessageToChat("You", userMessage);
+                chatHistory.push({ role: "user", content: userMessage });
+                chatInput.value = "";
+
+                const botResponse = await fetchBotResponse(userMessage);
+                addMessageToChat("DracoCodes AI", botResponse);
+
+                chatHistory.push({ role: "assistant", content: botResponse });
             };
 
             const addMessageToChat = (sender, message) => {
@@ -168,6 +173,7 @@
                 chatContainer.style.display = "none";
                 toggleChatBtn.style.display = "inline-block";
                 chatBody.innerHTML = "";
+                chatHistory = [];
             });
 
             sendChatBtn.addEventListener("click", sendMessage);
