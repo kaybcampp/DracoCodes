@@ -1,0 +1,155 @@
+/* General Page Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #141414;
+    border-bottom: 2px solid #00ff00;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+}
+
+.logo span {
+    color: #00ff00;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #00ff00;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: #fff;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 50px 20px;
+    background-color: #141414;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #00ff00;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: #00ff00;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.project-card {
+    position: relative;
+    background-color: #0d0d0d;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Developer Circles */
+.project-card .developer-circle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #00ff00;
+    background-color: #141414;
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+}
+
+.project-card .developer-circle.partner {
+    top: 70px; /* Adjust position below the first developer circle */
+}
+
+.project-image {
+    width: 100%;
+    height: 250px;
+    object-fit: contain; /* Ensures the entire image is visible */
+    border-bottom: 2px solid #00ff00;
+    background-color: #141414;
+}
+
+.project-details {
+    padding: 20px;
+    text-align: left;
+}
+
+.project-details h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #00ff00;
+}
+
+.project-details .languages {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.project-details .summary {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.project-details .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00ff00;
+    color: #0d0d0d;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.project-details .btn:hover {
+    background-color: #00cc00;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px 20px;
+    background-color: #141414;
+    border-top: 2px solid #00ff00;
+    color: #fff;
+}
