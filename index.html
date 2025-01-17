@@ -11,6 +11,65 @@
             background: url('/images/dracoCodesHome.png') no-repeat center center;
             background-size: cover;
         }
+
+        .packages {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #141414;
+            color: #fff;
+        }
+
+        .packages h2 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            border-bottom: 2px solid #00ff00;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .packages-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .package-card {
+            background-color: #1a1a1a;
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+            color: #fff;
+        }
+
+        .package-card h3 {
+            color: #00ff00;
+            margin-bottom: 10px;
+        }
+
+        .package-card p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .package-card .btn {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            background-color: #00ff00;
+            color: #0d0d0d;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .package-card .btn:hover {
+            background-color: #00cc00;
+        }
     </style>
 </head>
 <body>
@@ -21,7 +80,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="project.html">Projects</a></li>
-                <li><a href="#developers">Our Developers</a></li>
+                <li><a href="#developer">Our Developer</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -32,7 +91,7 @@
         <div class="hero-text">
             <h2>Custom Websites & Applications, Built for You</h2>
             <p>Quality and speed combined. Let DracoCodes bring your vision to life.</p>
-            <button id="toggle-chat" class="btn">Chat with Us</button>
+            <button id="toggle-chat" class="btn">Create your Project</button>
         </div>
     </section>
 
@@ -54,22 +113,38 @@
         </div>
     </section>
 
-    <section id="developers" class="developers">
-        <h2>Our Developers</h2>
+    <section class="packages">
+        <h2>Coding Packages</h2>
+        <div class="packages-grid">
+            <div class="package-card">
+                <h3>Basic Package</h3>
+                <p>Perfect for small projects or one-page designs with basic functionality. Includes 3 revisions.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="package-card">
+                <h3>Standard Package</h3>
+                <p>Ideal for mid-sized projects. Includes up to 5 pages, advanced features, and 5 revisions.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="package-card">
+                <h3>Premium Package</h3>
+                <p>Comprehensive solutions for large-scale projects. Includes unlimited pages, premium features, and unlimited revisions.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="developer" class="developer">
+        <h2>Our Developer</h2>
         <div class="developer-list">
             <div class="developer-item">
                 <div class="developer-photo" style="background-image: url('/images/pfp2.png');"></div>
                 <h3>Kayb C.</h3>
                 <p>Full-Stack Developer</p>
             </div>
-            <div class="developer-item">
-                <div class="developer-photo" style="background-image: url('/images/pfp.png');"></div>
-                <h3>Radoslav A.</h3>
-                <p>Backend Developer</p>
-            </div>
         </div>
-        <div class="developers-btn-container">
-            <a href="./project.html" class="btn">Our Work</a>
+        <div class="developer-btn-container">
+            <a href="./project.html" class="btn">My Work</a>
         </div>
     </section>
 
@@ -165,13 +240,11 @@
 
             toggleChatBtn.addEventListener("click", () => {
                 chatContainer.style.display = "flex";
-                toggleChatBtn.style.display = "none";
                 sendWelcomeMessage();
             });
 
             closeChatBtn.addEventListener("click", () => {
                 chatContainer.style.display = "none";
-                toggleChatBtn.style.display = "inline-block";
                 chatBody.innerHTML = "";
                 chatHistory = [];
             });

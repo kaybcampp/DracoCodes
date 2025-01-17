@@ -132,13 +132,13 @@ body {
 }
 
 /* Developers Section */
-.developers {
+.developer {
     text-align: center;
     padding: 50px 20px;
     background-color: #0d0d0d;
 }
 
-.developers h2 {
+.developer h2 {
     font-size: 28px;
     margin-bottom: 30px;
     border-bottom: 2px solid #00ff00;
@@ -173,11 +173,11 @@ body {
     margin-bottom: 5px;
 }
 
-.developers-btn-container {
+.developer-btn-container {
     margin-top: 20px;
 }
 
-.developers-btn-container .btn {
+.developer-btn-container .btn {
     text-decoration: none;
     color: #0d0d0d;
     background-color: #00ff00;
@@ -187,7 +187,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.developers-btn-container .btn:hover {
+.developer-btn-container .btn:hover {
     background-color: #00cc00;
 }
 

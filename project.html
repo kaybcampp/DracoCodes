@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DracoCodes Projects</title>
     <link rel="stylesheet" href="project.css">
+    <style>
+        .video-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1000;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        .video-popup iframe {
+            width: 100%;
+            height: 450px;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -16,7 +56,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="project.html">Projects</a></li>
-                <li><a href="index.html#developers">Our Developers</a></li>
+                <li><a href="index.html#developer">Our Developer</a></li>
                 <li><a href="index.html#about">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -25,13 +65,12 @@
 
     <!-- Projects Section -->
     <section class="projects-section">
-        <h2>Our Projects</h2>
+        <h2>Projects</h2>
         <div class="projects-grid">
             <!-- Project 1 -->
             <div class="project-card">
                 <div class="developer-circle" style="background-image: url('/images/pfp2.png');"></div>
-                <div class="developer-circle partner" style="background-image: url('/images/pfp.png');"></div>
-                <img src="/images/dthHome.png" alt="DracosTrapHouse" class="project-image">
+                <img src="/images/home.dth.png" alt="DracosTrapHouse" class="project-image">
                 <div class="project-details">
                     <h3>DracosTrapHouse</h3>
                     <p class="languages">HTML, CSS, JavaScript, Python</p>
@@ -47,7 +86,7 @@
                     <h3>Real Estate Solutions 302</h3>
                     <p class="languages">Python, Django, HTML, CSS</p>
                     <p class="summary">A platform designed to offer elegant and exclusive housing solutions in Delaware, showcasing properties dynamically.</p>
-                    <a href="https://kaybcampp.github.io/realEstateSolutions302/" class="btn" target="_blank">View Project</a>
+                    <a href="#" class="btn view-video" data-video="images/resvid2.mp4">View Project</a>
                 </div>
             </div>
             <!-- Project 3 -->
@@ -64,53 +103,69 @@
             <!-- Project 4 -->
             <div class="project-card">
                 <div class="developer-circle" style="background-image: url('/images/pfp2.png');"></div>
+                <img src="/images/portfolioImg.png" alt="Portfolio Website" class="project-image">
+                <div class="project-details">
+                    <h3>Portfolio Website</h3>
+                    <p class="languages">React, JavaScript, Tailwind CSS</p>
+                    <p class="summary">A personalized portfolio showcasing skills and projects, designed for responsiveness and elegance.</p>
+                    <a href="https://kaybcampp.github.io/portfolio/" class="btn" target="_blank">View Project</a>
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="developer-circle" style="background-image: url('/images/pfp2.png');"></div>
                 <img src="/images/pokeDex1.png" alt="PokeDex" class="project-image">
                 <div class="project-details">
                     <h3>PokeDex</h3>
                     <p class="languages">Java, Spring Boot, HTML, CSS</p>
                     <p class="summary">A fun and interactive PokeDex app to browse and learn about different Pokémon using modern Java frameworks.</p>
-                    <a href="https://kaybcampp.github.io/pokemonAutoPhotoshop/" class="btn" target="_blank">View Project</a>
-                </div>
-            </div>
-            <!-- Project 5 -->
-            <div class="project-card">
-                <div class="developer-circle" style="background-image: url('/images/pfp.png');"></div>
-                <img src="/images/radoslavSite.png" alt="Radoslave Site" class="project-image">
-                <div class="project-details">
-                    <h3>Portfolio Website</h3>
-                    <p class="languages">Vite, React.js, Tailwind CSS</p>
-                    <p class="summary">A portfolio website used to showcase skills and projects of Radoslav A., a software developer/engineer.</p>
-                    <a href="https://www.radoslav.site/#home" class="btn" target="_blank">View Project</a>
-                </div>
-            </div>
-            <!-- Project 6 -->
-            <div class="project-card">
-                <div class="developer-circle" style="background-image: url('/images/pfp.png');"></div>
-                <img src="/images/gdnSolutions.png" alt="GDN Solutions" class="project-image">
-                <div class="project-details">
-                    <h3>GDN Solutions - Backend</h3>
-                    <p class="languages">PHP, Laravel, MySQL</p>
-                    <p class="summary">Backend architecture for GDN Solutions, crafted for scalability and efficiency.</p>
-                    <a href="https://gdnsolution.com/" class="btn" target="_blank">View Project</a>
-                </div>
-            </div>
-            <!-- Project 7 -->
-            <div class="project-card">
-                <div class="developer-circle" style="background-image: url('/images/pfp.png');"></div>
-                <img src="/images/khao.png" alt="Buati Price" class="project-image">
-                <div class="project-details">
-                    <h3>Buati Price</h3>
-                    <p class="languages">PHP, MySQL, Laravel</p>
-                    <p class="summary">A dynamic pricing tool crafted to meet complex business needs with precise calculations.</p>
-                    <a href="https://buatiprice.com/" class="btn" target="_blank">View Project</a>
+                    <a href="#" class="btn view-video" data-video="images/pokedexvid.mp4">View Project</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Video Popup -->
+    <div class="popup-overlay"></div>
+    <div class="video-popup">
+        <span class="close-btn">&times;</span>
+        <iframe src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2024 DracoCodes | Powered by DracosTrapHouse</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const videoPopup = document.querySelector(".video-popup");
+            const popupOverlay = document.querySelector(".popup-overlay");
+            const closeBtn = document.querySelector(".close-btn");
+            const iframe = videoPopup.querySelector("iframe");
+            const videoButtons = document.querySelectorAll(".view-video");
+
+            videoButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const videoUrl = button.getAttribute("data-video");
+                    iframe.src = videoUrl;
+                    videoPopup.style.display = "block";
+                    popupOverlay.style.display = "block";
+                });
+            });
+
+            closeBtn.addEventListener("click", () => {
+                videoPopup.style.display = "none";
+                popupOverlay.style.display = "none";
+                iframe.src = "";
+            });
+
+            popupOverlay.addEventListener("click", () => {
+                videoPopup.style.display = "none";
+                popupOverlay.style.display = "none";
+                iframe.src = "";
+            });
+        });
+    </script>
 </body>
 </html>
