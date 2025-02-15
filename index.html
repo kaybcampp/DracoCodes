@@ -1,77 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DracoCodes</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Inline CSS for hero background */
-        .hero {
-            background: url('/images/dracoCodesHome.png') no-repeat center center;
-            background-size: cover;
-        }
-
-        .packages {
-            padding: 50px 20px;
-            text-align: center;
-            background-color: #141414;
-            color: #fff;
-        }
-
-        .packages h2 {
-            margin-bottom: 30px;
-            font-size: 28px;
-            border-bottom: 2px solid #00ff00;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .packages-grid {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .package-card {
-            background-color: #1a1a1a;
-            border: 2px solid #00ff00;
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            text-align: left;
-            color: #fff;
-        }
-
-        .package-card h3 {
-            color: #00ff00;
-            margin-bottom: 10px;
-        }
-
-        .package-card p {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .package-card .btn {
-            display: block;
-            margin-top: 15px;
-            text-align: center;
-            background-color: #00ff00;
-            color: #0d0d0d;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .package-card .btn:hover {
-            background-color: #00cc00;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css"> <!-- External CSS File -->
 </head>
+
 <body>
     <header class="header">
         <div class="logo">
@@ -118,18 +54,18 @@
         <div class="packages-grid">
             <div class="package-card">
                 <h3>Basic Package</h3>
-                <p>Perfect for small projects or one-page designs with basic functionality. Includes 3 revisions.</p>
-                <a href="#" class="btn">Learn More</a>
+                <p>For those who need small updates or maintenance for existing websites. Includes 3 revisions.</p>
+                <button class="btn learn-more" data-package="basic">Learn More</button>
             </div>
             <div class="package-card">
                 <h3>Standard Package</h3>
-                <p>Ideal for mid-sized projects. Includes up to 5 pages, advanced features, and 5 revisions.</p>
-                <a href="#" class="btn">Learn More</a>
+                <p>A comprehensive starter pack for dynamic websites, including payment integration and hosting for 3 months.</p>
+                <button class="btn learn-more" data-package="standard">Learn More</button>
             </div>
             <div class="package-card">
                 <h3>Premium Package</h3>
-                <p>Comprehensive solutions for large-scale projects. Includes unlimited pages, premium features, and unlimited revisions.</p>
-                <a href="#" class="btn">Learn More</a>
+                <p>An all-inclusive package offering full support and hosting for 1 year, with advanced features for e-commerce sites.</p>
+                <button class="btn learn-more" data-package="premium">Learn More</button>
             </div>
         </div>
     </section>
@@ -149,17 +85,20 @@
     </section>
 
     <section id="about" class="about">
-        <h2>About DracoCodes</h2>
         <div class="about-container">
-            <div class="about-text">
-                <p><strong>DracoCodes</strong> is a part of the DracosTrapHouse (DTH) umbrella, delivering innovative and expert solutions for custom-built websites and applications. We pride ourselves on producing projects that blend speed, quality, and a deep understanding of client needs.</p>
-                <p>Whether you're a startup or an established business, we’re here to help you build a digital presence that stands out and delivers exceptional results.</p>
-            </div>
             <div class="about-image">
                 <img src="/images/dthLaptop2.jpg" alt="About DracoCodes">
             </div>
+            <div class="about-text">
+                <h2>About <span>DracoCodes</span></h2>
+                <p><strong>DracoCodes</strong> is a part of the DracosTrapHouse (DTH) umbrella, delivering innovative and expert solutions for custom-built websites and applications.</p>
+                <p>We pride ourselves on crafting <span>high-quality</span> projects that blend <span>speed</span>, <span>functionality</span>, and a deep understanding of client needs.</p>
+                <p>Whether you're a <span>startup</span> or an <span>established business</span>, we’re here to help you build a digital presence that <strong>stands out</strong> and <strong>delivers results</strong>.</p>
+                <a href="project.html" class="btn">Explore Our Work</a>
+            </div>
         </div>
     </section>
+    
 
     <div id="chat-container" class="chat-container">
         <div id="chat-header" class="chat-header">
@@ -175,88 +114,40 @@
         </div>
     </div>
 
+    <!-- Popup Details -->
+    <div class="popup-overlay"></div>
+    <div id="popup-basic" class="popup-content">
+        <h3>Basic Package - $249.99</h3>
+        <ul>
+            <li>Small updates or developer changes for existing websites</li>
+            <li>Responsive Layout Adjustments</li>
+            <li>Minor Feature Additions</li>
+            <li>5 Revisions</li>
+        </ul>
+        <button class="close-btn">Close</button>
+    </div>
+    <div id="popup-standard" class="popup-content">
+        <h3>Standard Package - $550</h3>
+        <ul>
+            <li>Fully dynamic website (up to 7 pages)</li>
+            <li>Payment integration</li>
+            <li>Hosting and domain included (3 months)</li>
+            <li>Up to 20 products for e-commerce</li>
+            <li>5 Revisions</li>
+        </ul>
+        <h4>Subscription Options:</h4>
+        <ul>
+            <li>6 Months Full Support, Hosting, and Domain: $550</li>
+            <li>1 Year Full Support, Hosting, and Domain: $999</li>
+        </ul>
+        <button class="close-btn">Close</button>
+    </div>
+
     <footer class="footer">
         <p>&copy; 2024 DracoCodes | Powered by DracosTrapHouse</p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const chatContainer = document.getElementById("chat-container");
-            const toggleChatBtn = document.getElementById("toggle-chat");
-            const closeChatBtn = document.getElementById("close-chat");
-            const sendChatBtn = document.getElementById("send-chat");
-            const chatBody = document.getElementById("chat-body");
-            const chatInput = document.getElementById("chat-input");
-
-            const ngrokUrl = "https://fef9-151-197-215-174.ngrok-free.app"; // Replace with your ngrok URL
-
-            let chatHistory = [];
-
-            const sendWelcomeMessage = () => {
-                const welcomeMessage =
-                    "Welcome to DracoCodes! I’m here to help you with your custom project inquiries. Could you start by sharing what type of project you’d like us to build (e.g., website, bot, or application)?";
-                addMessageToChat("DracoCodes AI", welcomeMessage);
-            };
-
-            const fetchBotResponse = async (userMessage) => {
-                try {
-                    const response = await fetch(`${ngrokUrl}/chat`, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify({ message: userMessage, chatHistory }),
-                    });
-
-                    const data = await response.json();
-                    return data.response || "Sorry, something went wrong.";
-                } catch (error) {
-                    console.error("Error communicating with backend:", error);
-                    return "Sorry, something went wrong. Please try again later.";
-                }
-            };
-
-            const sendMessage = async () => {
-                const userMessage = chatInput.value.trim();
-                if (!userMessage) return;
-
-                addMessageToChat("You", userMessage);
-                chatHistory.push({ role: "user", content: userMessage });
-                chatInput.value = "";
-
-                const botResponse = await fetchBotResponse(userMessage);
-                addMessageToChat("DracoCodes AI", botResponse);
-
-                chatHistory.push({ role: "assistant", content: botResponse });
-            };
-
-            const addMessageToChat = (sender, message) => {
-                const messageDiv = document.createElement("div");
-                messageDiv.classList.add("chat-bubble", sender === "You" ? "user" : "bot");
-                messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
-                chatBody.appendChild(messageDiv);
-                chatBody.scrollTop = chatBody.scrollHeight;
-            };
-
-            toggleChatBtn.addEventListener("click", () => {
-                chatContainer.style.display = "flex";
-                sendWelcomeMessage();
-            });
-
-            closeChatBtn.addEventListener("click", () => {
-                chatContainer.style.display = "none";
-                chatBody.innerHTML = "";
-                chatHistory = [];
-            });
-
-            sendChatBtn.addEventListener("click", sendMessage);
-            chatInput.addEventListener("keydown", (event) => {
-                if (event.key === "Enter") {
-                    event.preventDefault();
-                    sendMessage();
-                }
-            });
-        });
-    </script>
+    <script src="scripts.js"></script> <!-- External JavaScript File -->
 </body>
+
 </html>
