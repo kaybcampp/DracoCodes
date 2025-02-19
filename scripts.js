@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sendChatBtn = document.getElementById("send-chat");
 
     // ✅ Replace with your actual Ngrok URL each time you restart Ngrok
-    const ngrokUrl = "https://47aa-2600-4040-72eb-c000-9c9e-f478-fb70-f27d.ngrok-free.app/chat"; // Ensure /chat is included
+    const ngrokUrl = "https://5ecf-2600-4040-72eb-c000-1f2-394b-cf71-846c.ngrok-free.app/chat"; // Ensure /chat is included
 
     // ✅ Ensure chat remains hidden until triggered
     chatContainer.style.display = "none";
