@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("✅ Script loaded and running");
+
+    // Chat Elements
     const chatContainer = document.getElementById("chat-container");
     const toggleChatBtn = document.getElementById("toggle-chat");
     const closeChatBtn = document.getElementById("close-chat");
@@ -6,24 +9,47 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatInput = document.getElementById("chat-input");
     const sendChatBtn = document.getElementById("send-chat");
 
-    // ✅ Replace with your actual Ngrok URL each time you restart Ngrok
-    const ngrokUrl = "https://5ecf-2600-4040-72eb-c000-1f2-394b-cf71-846c.ngrok-free.app/chat"; // Ensure /chat is included
+    // Popup Elements
+    const learnMoreButtons = document.querySelectorAll(".learn-more");
+    const popups = {
+        basic: document.getElementById("popup-basic"),
+        standard: document.getElementById("popup-standard"),
+        premium: document.getElementById("popup-premium")
+    };
+    const overlay = document.querySelector(".popup-overlay");
 
     // ✅ Ensure chat remains hidden until triggered
-    chatContainer.style.display = "none";
+    if (chatContainer) {
+        chatContainer.style.display = "none";
+    }
 
     // ✅ Open chat when "Create your Project" button is clicked
-    toggleChatBtn.addEventListener("click", () => {
-        chatContainer.style.display = "flex";
-        if (!chatBody.innerHTML.trim()) {
-            addMessageToChat("Bot", "Welcome to DracoCodes chat! Tell me about your project inquiry to be scheduled for a Zoom call and recommended a package!");
-        }
-    });
+    if (toggleChatBtn) {
+        toggleChatBtn.addEventListener("click", () => {
+            console.log("🟢 Chat button clicked");
+            if (chatContainer) {
+                chatContainer.style.display = "flex"; // Ensure chat opens
+                chatContainer.style.zIndex = "1000"; // Make sure chat appears above other elements
+                console.log("✅ Chat container should now be visible");
+
+                if (!chatBody.innerHTML.trim()) {
+                    addMessageToChat("Bot", "Welcome to DracoCodes chat! Tell me about your project inquiry to be scheduled for a Zoom call and recommended a package!");
+                }
+            }
+        });
+    } else {
+        console.error("❌ toggleChatBtn not found!");
+    }
 
     // ✅ Close chat when "X" is clicked
-    closeChatBtn.addEventListener("click", () => {
-        chatContainer.style.display = "none";
-    });
+    if (closeChatBtn) {
+        closeChatBtn.addEventListener("click", () => {
+            console.log("🔴 Chat close button clicked");
+            if (chatContainer) {
+                chatContainer.style.display = "none";
+            }
+        });
+    }
 
     // ✅ Function to add chat messages dynamically
     const addMessageToChat = (sender, message) => {
@@ -39,12 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const message = chatInput.value.trim();
         if (!message) return;
 
-        // Display the user's message
         addMessageToChat("You", message);
         chatInput.value = "";
 
         try {
-            const response = await fetch(`${ngrokUrl}`, {
+            const response = await fetch("https://your-ngrok-url/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message }),
@@ -68,4 +93,39 @@ document.addEventListener("DOMContentLoaded", () => {
             sendChatBtn.click();
         }
     });
+
+    // ✅ POPUP FUNCTIONALITY ✅
+
+    // Function to open the popup
+    function openPopup(packageType) {
+        const popup = popups[packageType];
+        if (popup) {
+            popup.style.display = "block";
+            overlay.style.display = "block";
+        }
+    }
+
+    // Function to close the popup
+    function closePopup() {
+        Object.values(popups).forEach(popup => {
+            if (popup) popup.style.display = "none";
+        });
+        overlay.style.display = "none";
+    }
+
+    // Add event listener to Learn More buttons
+    learnMoreButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const packageType = this.getAttribute("data-package");
+            openPopup(packageType);
+        });
+    });
+
+    // Add event listener to Close buttons
+    document.querySelectorAll(".close-btn").forEach(button => {
+        button.addEventListener("click", closePopup);
+    });
+
+    // Close popup when clicking outside of it (on overlay)
+    overlay.addEventListener("click", closePopup);
 });
