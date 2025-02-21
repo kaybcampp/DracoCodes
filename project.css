@@ -45,6 +45,29 @@ body {
     color: #fff;
 }
 
+/* Mobile Responsive Menu */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo h1 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .nav ul {
+        flex-direction: row; /* Keep items in a horizontal row */
+        gap: 20px; /* Increased gap for better spacing */
+    }
+
+    .nav ul li a {
+        font-size: 14px; /* Adjusted font size for readability */
+    }
+}
+
 /* Projects Section */
 .projects-section {
     padding: 50px 20px;
