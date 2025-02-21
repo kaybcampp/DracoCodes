@@ -12,24 +12,29 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
+    padding: 10px 20px;
     background-color: #141414;
     border-bottom: 2px solid #00ff00;
 }
 
+/* Logo */
 .logo h1 {
-    font-size: 24px;
+    font-size: 20px; /* Reduced size for better mobile view */
     color: #fff;
+    margin: 0;
 }
 
 .logo span {
     color: #00ff00;
 }
 
+/* Navigation */
 .nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav ul li {
@@ -41,10 +46,34 @@ body {
     color: #fff;
     font-weight: bold;
     transition: color 0.3s;
+    font-size: 14px; /* Reduced font size for mobile */
 }
 
 .nav ul li a:hover {
     color: #00ff00;
+}
+
+/* Mobile Responsive Menu */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .logo h1 {
+        font-size: 18px; /* Smaller logo for mobile */
+        margin-bottom: 10px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav ul li a {
+        font-size: 12px; /* Smaller font for better spacing */
+    }
 }
 
 /* Hero Section */
