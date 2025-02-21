@@ -67,12 +67,12 @@ body {
     }
 
     .nav ul {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row; /* Keep items in a horizontal row */
+        gap: 20px; /* Increased gap for better spacing */
     }
 
     .nav ul li a {
-        font-size: 12px; /* Smaller font for better spacing */
+        font-size: 14px; /* Adjusted font size for readability */
     }
 }
 
