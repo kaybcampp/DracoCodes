@@ -1,0 +1,48 @@
+[
+  {
+    "timestamp": "2025-02-19T21:26:49.948Z",
+    "userMessage": "hi, i would like a website for my hair salon!",
+    "botResponse": "Great! Could you please provide more details about your project vision? What specific features would you like to have on your website?"
+  },
+  {
+    "timestamp": "2025-02-19T21:27:05.235Z",
+    "userMessage": "I want users to be able to seamlessly book appointments on my site",
+    "botResponse": "That's a great feature. In addition, you could consider including a virtual tour of your salon or a gallery showcasing different hairstyles. Would you be interested in any of these additional features?"
+  },
+  {
+    "timestamp": "2025-02-19T21:27:17.466Z",
+    "userMessage": "the gallery sounds great!",
+    "botResponse": "Fantastic! So your website will have appointment booking and a hairstyle gallery. Based on these features, I recommend our Standard Package for $550. This includes e-commerce, payment integration, and up to 7 pages. It also comes with a custom domain and hosting for 3 months, but no ongoing support. Would you like to proceed with this, or would you like to consider our Premium Package?"
+  },
+  {
+    "timestamp": "2025-02-19T21:27:35.546Z",
+    "userMessage": "the starter package sounds perfect!",
+    "botResponse": "Great choice! The Standard Package will definitely serve your needs. Just to confirm, would you like to proceed with this package?"
+  },
+  {
+    "timestamp": "2025-02-19T21:27:41.897Z",
+    "userMessage": "yes",
+    "botResponse": "Excellent! To get started, I'll need your name, email, and three available time slots for a Zoom call to discuss your project in more detail."
+  },
+  {
+    "timestamp": "2025-02-19T21:28:05.247Z",
+    "userMessage": "my name is mary lou, email marylou@gmail.com and I am available anytime during the week!",
+    "botResponse": "Thank you, Mary Lou. Could you specify three particular dates and times during the week that work best for you? This will help us schedule the Zoom call more efficiently."
+  },
+  {
+    "timestamp": "2025-02-19T21:28:19.379Z",
+    "userMessage": "tues-thurs all day is my availability!",
+    "botResponse": "Thank you, Mary Lou. We have noted your availability from Tuesday to Thursday. Our developer, Kayb, will reach out to you via email to confirm the exact time for the Zoom call. Looking forward to kicking off your project!"
+  },
+  {
+    "userId": "testUser",
+    "timestamp": "2025-02-21T22:49:25.324Z",
+    "userMessage": "Hello",
+    "botResponse": "Hello! Welcome to DracoCodes. How can I assist you with your website project today?"
+  },
+  {
+    "timestamp": "2025-02-21T22:56:41.199Z",
+    "userMessage": "hi",
+    "botResponse": "Hello! How can I assist you with your project on DracoCodes today?"
+  }
+]

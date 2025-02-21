@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         chatInput.value = "";
 
         try {
-            const response = await fetch("https://your-ngrok-url/chat", {
+            const response = await fetch("https://dracocodes.com/chat", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message }),
