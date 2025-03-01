@@ -59,22 +59,63 @@
         </div>
     </section>
 
+    <section id="why-dracocodes" class="why-dracocodes">
+        <h2 class="section-title" style="color: #00ff00;">Why Choose DracoCodes</h2>
+        <div class="why-content">
+            <div class="counters">
+                <div class="counter-item">
+                    <div class="counter" data-target="50000"></div>
+                    <p class="counter-label">Lines of Code Written</p>
+                    <p class="counter-description">We have meticulously crafted over 50,000 lines of code, ensuring each line aligns with our clients' visions for a fully customized website experience.</p>
+                </div>
+                <div class="counter-item">
+                    <div class="counter" data-target="25">0%</div>
+                    <p class="counter-label">% More Efficient Than Competitors</p>
+                    <p class="counter-description">Our development process is streamlined to be 25% more efficient than industry standards, delivering quality projects in a shorter timeframe.</p>
+                </div>
+                <div class="counter-item">
+                    <div class="counter" data-target="150">0%</div>
+                    <p class="counter-label">% Below Market Price</p>
+                    <p class="counter-description">Passion drives us to offer our services at prices 150% below the market rate - with sales prices 400% under market!</p>
+                </div>
+            </div>
+        </div>
+    </section>       
+    
     <section class="packages">
+        <section class="limited-time-offer">
+            <p>Limited-Time Offer: Discounted prices valid for the next 9 orders!</p>
+        </section>        
         <h2>Coding Packages</h2>
         <div class="packages-grid">
+            <!-- Basic Package -->
             <div class="package-card">
                 <h3>Basic Package</h3>
                 <p>For those who need small updates or maintenance for existing websites. Includes 3 revisions.</p>
+                <div class="price">
+                    <span class="regular-price">$975</span>
+                    <span class="sale-price">$249.99</span>
+                </div>
                 <button class="btn learn-more" data-package="basic">Learn More</button>
             </div>
+            <!-- Standard Package -->
             <div class="package-card">
                 <h3>Standard Package</h3>
                 <p>A comprehensive starter pack for dynamic websites, including payment integration and hosting for 3 months.</p>
+                <div class="price">
+                    <span class="regular-price">$2,100</span>
+                    <span class="sale-price">$550</span>
+                </div>
                 <button class="btn learn-more" data-package="standard">Learn More</button>
             </div>
+            <!-- Premium Package -->
             <div class="package-card">
                 <h3>Premium Package</h3>
                 <p>An all-inclusive package offering full support and hosting for 1 year, with advanced features for e-commerce sites.</p>
+                <div class="price">
+                    <span class="regular-price">$5,600</span>
+                    <span class="sale-price">$3,499.99</span>
+                </div>
                 <button class="btn learn-more" data-package="premium">Learn More</button>
             </div>
         </div>
@@ -169,6 +210,48 @@
     </footer>
 
     <script src="scripts.js"></script> <!-- External JavaScript File -->
+    <script>document.addEventListener('DOMContentLoaded', () => {
+        const counters = document.querySelectorAll('.counter');
+        const animationDuration = 3000; // 3 seconds
+    
+        const animateCounters = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const increment = target / (animationDuration / 16.67); // Approximate 60fps
+                let current = 0;
+    
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+    
+                updateCounter();
+            });
+        };
+    
+        const handleScroll = () => {
+            counters.forEach(counter => {
+                const rect = counter.getBoundingClientRect();
+                if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                    if (!counter.classList.contains('animated')) {
+                        counter.classList.add('animated');
+                        animateCounters();
+                    }
+                } else {
+                    counter.classList.remove('animated');
+                }
+            });
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+    });    
+    </script>
 </body>
 
 </html>
